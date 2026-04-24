@@ -1,14 +1,17 @@
-# AI Automation Project
+# 🤖 AI Task Assistant
 
-This is an open-source project focused on building automation tools using AI.
+An open-source AI-powered CLI tool that helps users manage tasks, improve productivity, and get intelligent suggestions.
 
-## Features
-- Task automation
-- Data processing
-- AI-based decision support
+## 🚀 Features
+- AI-based task suggestions
+- Productivity tips
+- Simple command-line interface
+- Lightweight and fast
 
-## Status
-Work in progress 🚀
+## 🛠️ Tech Stack
+- Python 3
 
-## Goal
-To build simple and scalable AI tools for real-world use cases.
+## ▶️ How to Run
+
+```bash
+python main.py
