@@ -1,17 +1,39 @@
-# 🤖 AI Task Assistant
+# 🤖 AI Productivity Assistant
 
-An open-source AI-powered CLI tool that helps users manage tasks, improve productivity, and get intelligent suggestions.
+A real AI-powered command-line assistant that helps users with tasks, productivity, and decision-making using LLM APIs.
 
 ## 🚀 Features
-- AI-based task suggestions
-- Productivity tips
-- Simple command-line interface
-- Lightweight and fast
+- Real AI responses using API
+- Task planning and suggestions
+- Simple CLI interface
+- Lightweight and extensible
 
 ## 🛠️ Tech Stack
-- Python 3
+- Python
+- OpenAI API (can be swapped with Claude)
 
-## ▶️ How to Run
+## ▶️ Setup
 
-```bash
+1. Clone repo
+2. Install dependencies
+
+pip install -r requirements.txt
+
+3. Add your API key in main.py
+
+4. Run:
+
 python main.py
+
+## 📌 Example
+
+Enter your task: Prepare audit report  
+AI Response: Break it into sections like planning, data collection, and review.
+
+## 🔮 Future Improvements
+- Web UI (Flask)
+- Task automation (email, reminders)
+- Multi-agent workflows
+
+## 🤝 Contribution
+Open to contributions!
