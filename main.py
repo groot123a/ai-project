@@ -1,27 +1,42 @@
-import random
+import requests
 
-def ai_response(user_input):
-    responses = [
-        f"AI Suggestion: You can break '{user_input}' into smaller steps.",
-        f"Tip: Start working on '{user_input}' for 25 minutes (Pomodoro).",
-        f"Insight: Prioritize '{user_input}' based on urgency and importance.",
-        f"Automation Idea: Try automating parts of '{user_input}' using scripts."
-    ]
-    return random.choice(responses)
+API_KEY = "your_api_key_here"  # replace later
+
+def ask_ai(prompt):
+    url = "https://api.openai.com/v1/chat/completions"
+    
+    headers = {
+        "Authorization": f"Bearer {API_KEY}",
+        "Content-Type": "application/json"
+    }
+
+    data = {
+        "model": "gpt-4o-mini",
+        "messages": [
+            {"role": "user", "content": prompt}
+        ]
+    }
+
+    response = requests.post(url, headers=headers, json=data)
+    
+    if response.status_code == 200:
+        return response.json()["choices"][0]["message"]["content"]
+    else:
+        return "Error connecting to AI"
 
 def main():
-    print("🤖 AI Task Assistant (CLI)")
+    print("🤖 AI Productivity Assistant")
     print("Type 'exit' to quit\n")
 
     while True:
-        user_input = input("Enter your task: ")
-        if user_input.lower() == "exit":
-            print("Goodbye 👋")
-            break
+        user_input = input("Enter your task/question: ")
         
-        response = ai_response(user_input)
-        print(response)
-        print("-" * 40)
+        if user_input.lower() == "exit":
+            break
+
+        reply = ask_ai(user_input)
+        print("\nAI Response:\n", reply)
+        print("-" * 50)
 
 if __name__ == "__main__":
     main()
